@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AAF Cloud Scan</title>
+    <meta name="description" content="Paste a public GitHub repo URL and run Agent Artifact Firewall in an isolated scan workflow.">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <div class="brand">AAF Cloud Scan</div>
+        <div class="eyebrow">Before you install it, scan it.</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="badge">Public repo scanning, safety-first MVP</p>
+          <h1>Scan agent artifact repos before they reach your workflow.</h1>
+          <p class="lede">
+            Paste a public GitHub repository URL and run Agent Artifact Firewall in an isolated scan job.
+            Review verdict, severity, artifact classes, and findings before you install a skill, plugin,
+            hook, MCP config, or repo instruction pack.
+          </p>
+        </div>
+
+        <div class="panel form-panel">
+          <form id="scan-form">
+            <label for="repo-url">GitHub repository URL</label>
+            <input id="repo-url" name="repoUrl" type="url" placeholder="https://github.com/owner/repo" required>
+            <button type="submit">Start scan</button>
+            <p class="hint">MVP supports public GitHub repos only.</p>
+            <div id="form-status" class="status-note" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="wrap grid-3">
+        <article class="panel">
+          <h2>What gets scanned</h2>
+          <ul>
+            <li>Agent skills and instruction packs</li>
+            <li>Hooks and helper scripts</li>
+            <li>MCP configuration files</li>
+            <li>Plugin manifests and repo instructions</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>How it works</h2>
+          <ol>
+            <li>Submit repo URL</li>
+            <li>Queue isolated scan job</li>
+            <li>Run AAF against repo files</li>
+            <li>Review verdict and findings</li>
+          </ol>
+        </article>
+        <article class="panel">
+          <h2>MVP guardrails</h2>
+          <ul>
+            <li>Strict GitHub URL validation</li>
+            <li>Public repos only</li>
+            <li>Rate limits and size checks</li>
+            <li>No repo code execution</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="wrap narrative">
+        <div class="panel wide-panel">
+          <h2>Why this exists</h2>
+          <p>
+            Agent Artifact Firewall is a trust-and-safety layer for the files that shape agent behaviour.
+            The goal is simple: help teams inspect risky agent artifacts before install, merge, or adoption.
+          </p>
+          <p>
+            This public MVP is intentionally lean. It focuses on safe public repo scanning, clear outputs,
+            and a credible path to premium workflows later.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

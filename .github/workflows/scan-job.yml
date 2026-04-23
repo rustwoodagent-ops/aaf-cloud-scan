@@ -1,0 +1,76 @@
+name: AAF cloud scan job
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Job ID created by the Cloudflare API
+        required: true
+      target_owner:
+        description: Target GitHub owner
+        required: true
+      target_repo:
+        description: Target GitHub repository
+        required: true
+      target_default_branch:
+        description: Target default branch
+        required: true
+      target_repo_url:
+        description: Human-readable repository URL
+        required: true
+      callback_url:
+        description: Signed callback destination
+        required: true
+      max_file_count:
+        description: Extracted repo file-count limit
+        required: true
+      max_path_depth:
+        description: Extracted repo path-depth limit
+        required: true
+      max_extracted_size_kb:
+        description: Extracted repo size limit in KB
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out product repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          submodules: false
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Run isolated AAF scan
+        timeout-minutes: 12
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          TARGET_OWNER: ${{ inputs.target_owner }}
+          TARGET_REPO: ${{ inputs.target_repo }}
+          TARGET_DEFAULT_BRANCH: ${{ inputs.target_default_branch }}
+          TARGET_REPO_URL: ${{ inputs.target_repo_url }}
+          CALLBACK_URL: ${{ inputs.callback_url }}
+          MAX_FILE_COUNT: ${{ inputs.max_file_count }}
+          MAX_PATH_DEPTH: ${{ inputs.max_path_depth }}
+          MAX_EXTRACTED_SIZE_KB: ${{ inputs.max_extracted_size_kb }}
+          AAF_COMMIT_SHA: 5c19babe7914c45f0f01d3052d9e075f8a838a65
+          SCAN_CALLBACK_SECRET: ${{ secrets.SCAN_CALLBACK_SECRET }}
+        run: bash scripts/run-scan-job.sh
+
+      - name: Upload scan artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aaf-scan-${{ inputs.job_id }}
+          path: artifacts/${{ inputs.job_id }}
+          if-no-files-found: ignore

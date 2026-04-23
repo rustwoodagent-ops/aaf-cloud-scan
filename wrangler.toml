@@ -1,0 +1,27 @@
+name = "aaf-cloud-scan"
+compatibility_date = "2026-04-23"
+pages_build_output_dir = "public"
+
+[[kv_namespaces]]
+binding = "JOBS_KV"
+id = "replace-with-jobs-kv-id"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "replace-with-rate-limit-kv-id"
+
+[vars]
+PUBLIC_BASE_URL = "https://scan.agentartifactfirewall.com"
+GITHUB_OWNER = "rustwoodagent-ops"
+GITHUB_REPO = "aaf-cloud-scan"
+GITHUB_WORKFLOW_FILE = "scan-job.yml"
+GITHUB_WORKFLOW_REF = "main"
+JOB_TTL_SECONDS = "604800"
+MAX_REPO_SIZE_KB = "50000"
+MAX_FILE_COUNT = "12000"
+MAX_PATH_DEPTH = "12"
+MAX_EXTRACTED_SIZE_KB = "75000"
+RATE_LIMIT_WINDOW_SECONDS = "3600"
+RATE_LIMIT_MAX_REQUESTS = "10"
+CALLBACK_MAX_AGE_SECONDS = "300"
+CALLBACK_FUTURE_SKEW_SECONDS = "60"

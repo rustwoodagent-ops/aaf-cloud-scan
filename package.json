@@ -1,0 +1,14 @@
+{
+  "name": "aaf-cloud-scan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public",
+    "check": "node --check public/main.js && node --check public/job.js && node --check functions/_lib/validation.js && node --check functions/_lib/github.js && node --check functions/_lib/jobs.js && node --check functions/_lib/security.js && node --check functions/api/jobs/index.js && node --check 'functions/api/jobs/[id].js' && node --check 'functions/api/callback/[id].js' && node --check scripts/build-summary.mjs && node --check scripts/runner-callback.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.0"
+  }
+}
