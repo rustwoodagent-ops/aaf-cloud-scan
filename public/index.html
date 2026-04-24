@@ -9,79 +9,139 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="wrap">
-        <div class="brand">AAF Cloud Scan</div>
-        <div class="eyebrow">Before you install it, scan it.</div>
+      <div class="wrap site-header-row">
+        <a class="brand-lockup" href="/" aria-label="AAF Cloud Scan home">
+          <span class="brand-mark">AAF</span>
+          <span>
+            <span class="brand">AAF Cloud Scan</span>
+            <span class="eyebrow">Before you install it, scan it.</span>
+          </span>
+        </a>
+        <div class="header-note">Public GitHub repo scanning, safety-first</div>
       </div>
     </header>
 
     <main>
       <section class="hero wrap">
-        <div class="hero-copy">
-          <p class="badge">Public repo scanning, safety-first MVP</p>
-          <h1>Scan agent artifact repos before they reach your workflow.</h1>
-          <p class="lede">
-            Paste a public GitHub repository URL and run Agent Artifact Firewall in an isolated scan job.
-            Review verdict, severity, artifact classes, and findings before you install a skill, plugin,
-            hook, MCP config, or repo instruction pack.
-          </p>
-        </div>
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="badge">Public repo scanning, safety-first MVP</p>
+            <h1>Scan agent artifact repos before they reach your workflow.</h1>
+            <p class="lede">
+              Paste a public GitHub repository URL and run Agent Artifact Firewall in an isolated scan job.
+              Review verdict, severity, artifact classes, and findings before you install a skill, plugin,
+              hook, MCP config, or repo instruction pack.
+            </p>
+            <div class="pill-row hero-pills" aria-label="core safeguards">
+              <span class="pill neutral">Public GitHub repos only</span>
+              <span class="pill neutral">Archive-only file analysis</span>
+              <span class="pill neutral">GitHub Actions isolation</span>
+              <span class="pill neutral">Signed result callbacks</span>
+            </div>
+          </div>
 
-        <div class="panel form-panel">
-          <form id="scan-form">
-            <label for="repo-url">GitHub repository URL</label>
-            <input id="repo-url" name="repoUrl" type="url" placeholder="https://github.com/owner/repo" required>
-            <button type="submit">Start scan</button>
-            <p class="hint">MVP supports public GitHub repos only.</p>
-            <div id="form-status" class="status-note" aria-live="polite"></div>
-          </form>
+          <div class="panel form-panel hero-form-panel">
+            <div class="panel-kicker">Start a scan</div>
+            <h2>Paste a GitHub repository URL</h2>
+            <p class="panel-copy">
+              Submit a public repository, queue a safe isolated scan, then review a clean report page with verdict,
+              findings, and downloadable outputs.
+            </p>
+            <form id="scan-form">
+              <label for="repo-url">GitHub repository URL</label>
+              <input id="repo-url" name="repoUrl" type="url" placeholder="https://github.com/owner/repo" required>
+              <button type="submit">Start scan</button>
+              <p class="hint">MVP supports public GitHub repositories only.</p>
+              <div id="form-status" class="status-note" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </section>
 
-      <section class="wrap grid-3">
-        <article class="panel">
-          <h2>What gets scanned</h2>
-          <ul>
-            <li>Agent skills and instruction packs</li>
-            <li>Hooks and helper scripts</li>
-            <li>MCP configuration files</li>
-            <li>Plugin manifests and repo instructions</li>
-          </ul>
-        </article>
-        <article class="panel">
-          <h2>How it works</h2>
-          <ol>
-            <li>Submit repo URL</li>
-            <li>Queue isolated scan job</li>
-            <li>Run AAF against repo files</li>
-            <li>Review verdict and findings</li>
-          </ol>
-        </article>
-        <article class="panel">
-          <h2>MVP guardrails</h2>
-          <ul>
-            <li>Strict GitHub URL validation</li>
-            <li>Public repos only</li>
-            <li>Rate limits and size checks</li>
-            <li>No repo code execution</li>
-          </ul>
-        </article>
+      <section class="wrap section-block">
+        <div class="section-heading">
+          <p class="section-kicker">What the experience should feel like</p>
+          <h2>Simple front door, serious scan path.</h2>
+          <p>
+            The visual pass is intentionally cleaner and lighter. The page should feel trustworthy, modern,
+            and focused on one action, without reading like a prototype or a security dashboard dump.
+          </p>
+        </div>
+        <div class="feature-grid feature-grid-three">
+          <article class="panel feature-card">
+            <div class="card-icon">01</div>
+            <h3>What gets scanned</h3>
+            <p class="card-copy">The page quickly explains the agent artifact classes users actually care about.</p>
+            <ul class="clean-list">
+              <li>Agent skills and instruction packs</li>
+              <li>Hooks and helper scripts</li>
+              <li>MCP configuration files</li>
+              <li>Plugin manifests and repo instructions</li>
+            </ul>
+          </article>
+          <article class="panel feature-card">
+            <div class="card-icon">02</div>
+            <h3>How it works</h3>
+            <p class="card-copy">The interaction stays understandable for non-technical users.</p>
+            <ol class="clean-list ordered-list">
+              <li>Submit repo URL</li>
+              <li>Queue isolated scan job</li>
+              <li>Run AAF against repo files</li>
+              <li>Review verdict and findings</li>
+            </ol>
+          </article>
+          <article class="panel feature-card">
+            <div class="card-icon">03</div>
+            <h3>MVP guardrails</h3>
+            <p class="card-copy">The product leads with trust and boundaries, not hype.</p>
+            <ul class="clean-list">
+              <li>Strict GitHub URL validation</li>
+              <li>Public repos only</li>
+              <li>Rate limits and size checks</li>
+              <li>No repo code execution</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
-      <section class="wrap narrative">
-        <div class="panel wide-panel">
-          <h2>Why this exists</h2>
-          <p>
-            Agent Artifact Firewall is a trust-and-safety layer for the files that shape agent behaviour.
-            The goal is simple: help teams inspect risky agent artifacts before install, merge, or adoption.
-          </p>
-          <p>
-            This public MVP is intentionally lean. It focuses on safe public repo scanning, clear outputs,
-            and a credible path to premium workflows later.
-          </p>
+      <section class="wrap section-block">
+        <div class="panel wide-panel story-panel">
+          <div class="section-heading section-heading-left">
+            <p class="section-kicker">Why this exists</p>
+            <h2>A trust-and-safety layer for agent artifacts.</h2>
+            <p>
+              Agent Artifact Firewall helps teams inspect the files that shape agent behaviour before install,
+              merge, or adoption. The public product should feel calm and credible, with enough polish to inspire
+              trust while staying narrow and useful.
+            </p>
+          </div>
+          <div class="story-grid">
+            <div class="story-card">
+              <h3>Clear verdict</h3>
+              <p>Users should understand the outcome quickly, not decode security tooling jargon.</p>
+            </div>
+            <div class="story-card">
+              <h3>Clean findings</h3>
+              <p>Severity, artifact classes, and recommendations need to be readable on first scan.</p>
+            </div>
+            <div class="story-card">
+              <h3>Downloadable outputs</h3>
+              <p>JSON and Markdown reports should feel like part of a polished product, not an afterthought.</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer-row">
+        <div>
+          <div class="brand">AAF Cloud Scan</div>
+          <div class="eyebrow">Public-facing scan front end for Agent Artifact Firewall</div>
+        </div>
+        <div class="footer-note">Public repo scanning only, for this MVP.</div>
+      </div>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>

@@ -47,26 +47,43 @@ function downloadBlob(filename, content, type) {
   URL.revokeObjectURL(url);
 }
 
+function createMetaRow(label, value, href) {
+  const row = document.createElement('div');
+  row.className = 'meta-row';
+
+  const labelNode = document.createElement('span');
+  labelNode.className = 'meta-label';
+  labelNode.textContent = label;
+
+  const valueNode = href ? document.createElement('a') : document.createElement('span');
+  valueNode.className = href ? 'text-link codeish' : 'codeish meta-value';
+  valueNode.textContent = value;
+
+  if (href) {
+    valueNode.href = href;
+    valueNode.target = '_blank';
+    valueNode.rel = 'noreferrer noopener';
+  }
+
+  row.append(labelNode, valueNode);
+  return row;
+}
+
 function renderRunnerState(job) {
   runnerStateNode.innerHTML = '';
-  const items = [
-    `Job ID: ${job.id}`,
-    `Status: ${job.status}`,
-    `Created: ${job.createdAt || 'n/a'}`,
-    `Updated: ${job.updatedAt || 'n/a'}`
+  const rows = [
+    createMetaRow('Job ID', job.id),
+    createMetaRow('Status', job.status),
+    createMetaRow('Created', job.createdAt || 'n/a'),
+    createMetaRow('Updated', job.updatedAt || 'n/a')
   ];
 
-  if (job.runner?.startedAt) items.push(`Runner started: ${job.runner.startedAt}`);
-  if (job.runner?.finishedAt) items.push(`Runner finished: ${job.runner.finishedAt}`);
-  if (job.runner?.logsUrl) items.push(`Logs: ${job.runner.logsUrl}`);
-  if (job.error) items.push(`Error: ${job.error}`);
+  if (job.runner?.startedAt) rows.push(createMetaRow('Runner started', job.runner.startedAt));
+  if (job.runner?.finishedAt) rows.push(createMetaRow('Runner finished', job.runner.finishedAt));
+  if (job.runner?.logsUrl) rows.push(createMetaRow('Logs', 'Open workflow logs', job.runner.logsUrl));
+  if (job.error) rows.push(createMetaRow('Error', job.error));
 
-  items.forEach((value) => {
-    const div = document.createElement('div');
-    div.className = 'codeish';
-    div.textContent = value;
-    runnerStateNode.appendChild(div);
-  });
+  rows.forEach((row) => runnerStateNode.appendChild(row));
 }
 
 function renderFindings(job) {
@@ -119,7 +136,10 @@ function renderSeveritySummary(job) {
   const entries = Object.entries(job.result?.severitySummary || {});
 
   if (!entries.length) {
-    severityNode.textContent = 'Waiting for severity data.';
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Waiting for severity data.';
+    severityNode.appendChild(empty);
     return;
   }
 
@@ -135,7 +155,7 @@ function renderArtifactClasses(job) {
   const artifactClasses = job.result?.artifactClasses || [];
 
   if (!artifactClasses.length) {
-    artifactClassesNode.textContent = 'No artifact classes reported yet.';
+    artifactClassesNode.appendChild(createPill('Awaiting artifact classes'));
     return;
   }
 
@@ -161,6 +181,7 @@ function bindDownloads(job) {
 
 function renderJob(job) {
   latestJob = job;
+  document.title = `${job.owner}/${job.repo} · AAF Cloud Scan`;
   statusBadge.className = `badge ${badgeClassForStatus(job.status)}`;
   statusBadge.textContent = job.status.toUpperCase();
   titleNode.textContent = `${job.owner}/${job.repo}`;
@@ -204,12 +225,14 @@ async function pollJob() {
       pollHandle = window.setTimeout(pollJob, 5000);
     }
   } catch (error) {
+    statusBadge.className = 'badge danger';
     statusBadge.textContent = 'ERROR';
     findingsListNode.textContent = error.message || 'Could not load job.';
   }
 }
 
 if (!jobId) {
+  statusBadge.className = 'badge danger';
   statusBadge.textContent = 'INVALID';
   findingsListNode.textContent = 'Missing job ID.';
 } else {
