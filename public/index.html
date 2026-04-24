@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AAF Cloud Scan</title>
-    <meta name="description" content="Submit a public GitHub repository URL and get a clear security report before you install agent artifacts.">
+    <meta name="description" content="Scan public GitHub repositories for risky agent-facing files before you install, merge, or adopt them.">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -14,10 +14,10 @@
           <span class="brand-mark">AAF</span>
           <span>
             <span class="brand">AAF Cloud Scan</span>
-            <span class="eyebrow">Before you install it, scan it.</span>
+            <span class="eyebrow">Developer security for agent-facing repositories</span>
           </span>
         </a>
-        <div class="header-note">Repository security scanning</div>
+        <div class="header-note">Public GitHub repository scanning</div>
       </div>
     </header>
 
@@ -26,30 +26,30 @@
         <div class="hero-shell">
           <div class="hero-copy">
             <p class="badge">Public GitHub repository scanning</p>
-            <h1>Scan GitHub repositories before they reach your workflow.</h1>
+            <h1>Scan agent-facing repositories before they reach your workflow.</h1>
             <p class="lede">
-              Submit a public GitHub repository URL to generate a clear security report before you install
-              agent skills, hooks, MCP configs, plugin files, or repository instruction packs.
+              AAF Cloud Scan reviews public GitHub repositories for risky agent artifacts, hooks, MCP configs,
+              plugin files, scripts, and repo instructions before you install, merge, or adopt them.
             </p>
             <div class="pill-row hero-pills" aria-label="core safeguards">
-              <span class="pill neutral">Public GitHub repos only</span>
-              <span class="pill neutral">Archive-only file analysis</span>
-              <span class="pill neutral">GitHub Actions isolation</span>
-              <span class="pill neutral">Signed result callbacks</span>
+              <span class="pill neutral">Public GitHub repositories only</span>
+              <span class="pill neutral">Hooks, scripts, and MCP configs</span>
+              <span class="pill neutral">Signed callbacks and isolated workflow</span>
+              <span class="pill neutral">JSON and Markdown reports</span>
             </div>
           </div>
 
           <div class="panel form-panel hero-form-panel">
-            <div class="panel-kicker">Start a scan</div>
-            <h2>Paste a GitHub repository URL</h2>
+            <div class="panel-kicker">Start a repository scan</div>
+            <h2>Paste a public GitHub repository URL</h2>
             <p class="panel-copy">
-              Start a scan for a public repository and open a report with verdict, findings, and downloadable results.
+              Queue a scan, open a report, and review verdicts, findings, and downloadable outputs in one place.
             </p>
             <form id="scan-form">
               <label for="repo-url">GitHub repository URL</label>
               <input id="repo-url" name="repoUrl" type="url" placeholder="https://github.com/owner/repo" required>
               <button type="submit">Start scan</button>
-              <p class="hint">Public GitHub repositories only.</p>
+              <p class="hint">Public GitHub repositories only. Private repositories are not supported.</p>
               <div id="form-status" class="status-note" aria-live="polite"></div>
             </form>
           </div>
@@ -58,21 +58,20 @@
 
       <section class="wrap section-block">
         <div class="section-heading">
-          <p class="section-kicker">How it works</p>
-          <h2>Simple submit. Clear security report.</h2>
+          <p class="section-kicker">What it checks</p>
+          <h2>Repository trust review for agent-facing files.</h2>
           <p>
-            AAF Cloud Scan gives you a focused first-pass review of agent-facing files so you can assess risk
-            before install, merge, or adoption.
+            Focused coverage for the files that shape agent behaviour, tool access, and workflow automation.
           </p>
         </div>
         <div class="feature-grid feature-grid-three">
           <article class="panel feature-card">
             <div class="card-icon">01</div>
             <h3>What gets scanned</h3>
-            <p class="card-copy">Review the files most likely to shape agent behaviour and runtime actions.</p>
+            <p class="card-copy">Review the files most likely to change prompts, tools, hooks, and runtime behaviour.</p>
             <ul class="clean-list">
               <li>Agent skills and instruction packs</li>
-              <li>Hooks and helper scripts</li>
+              <li>Hooks and automation scripts</li>
               <li>MCP configuration files</li>
               <li>Plugin manifests and repo instructions</li>
             </ul>
@@ -80,23 +79,22 @@
           <article class="panel feature-card">
             <div class="card-icon">02</div>
             <h3>How it works</h3>
-            <p class="card-copy">Submit a repo, queue the scan, and review results in a single report.</p>
+            <p class="card-copy">A fast path from repository URL to a report your team can review immediately.</p>
             <ol class="clean-list ordered-list">
-              <li>Submit repo URL</li>
-              <li>Queue isolated scan job</li>
-              <li>Run AAF against repo files</li>
-              <li>Review verdict and findings</li>
+              <li>Validate the public GitHub repository URL</li>
+              <li>Queue an isolated scan workflow</li>
+              <li>Review verdict, findings, and exports</li>
             </ol>
           </article>
           <article class="panel feature-card">
             <div class="card-icon">03</div>
             <h3>Built-in safeguards</h3>
-            <p class="card-copy">The scanner stays narrow, predictable, and safe for public repository review.</p>
+            <p class="card-copy">Narrow scope, predictable controls, and a report-first workflow designed for trust.</p>
             <ul class="clean-list">
               <li>Strict GitHub URL validation</li>
-              <li>Public repos only</li>
-              <li>Rate limits and size checks</li>
-              <li>No repo code execution</li>
+              <li>Public repositories only</li>
+              <li>Rate limits and repository size checks</li>
+              <li>No target repo code execution</li>
             </ul>
           </article>
         </div>
@@ -106,24 +104,25 @@
         <div class="panel wide-panel story-panel">
           <div class="section-heading section-heading-left">
             <p class="section-kicker">Why this exists</p>
-            <h2>A trust-and-safety layer for agent artifacts.</h2>
+            <h2>Trust-sensitive repo files deserve their own review step.</h2>
             <p>
-              Use AAF Cloud Scan to inspect repository files that influence agent behaviour before install, merge,
-              or adoption. Results are organized for quick review, sharing, and follow-up.
+              Modern agent tooling often ships critical behaviour outside traditional application code. AAF Cloud Scan
+              helps developers, security engineers, and technical founders inspect those files before install, merge,
+              or adoption.
             </p>
           </div>
           <div class="story-grid">
             <div class="story-card">
-              <h3>Clear verdict</h3>
-              <p>See the overall outcome quickly, with severity and supporting context.</p>
+              <h3>Clear verdicts</h3>
+              <p>Understand the overall outcome quickly, with severity and supporting context at a glance.</p>
             </div>
             <div class="story-card">
               <h3>Readable findings</h3>
-              <p>Each finding is grouped into a report you can review without digging through raw logs.</p>
+              <p>Review structured findings without digging through raw logs or piecing together workflow output.</p>
             </div>
             <div class="story-card">
               <h3>Downloadable reports</h3>
-              <p>Export JSON and Markdown for review, sharing, or record-keeping.</p>
+              <p>Export JSON and Markdown for security review, internal sharing, or audit records.</p>
             </div>
           </div>
         </div>

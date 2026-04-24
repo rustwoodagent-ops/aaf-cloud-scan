@@ -15,7 +15,7 @@ async function createJob(repoUrl) {
 
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(payload.error || 'Could not create scan job.');
+    throw new Error(payload.error || 'Could not start scan.');
   }
 
   return payload;
@@ -30,13 +30,13 @@ form?.addEventListener('submit', async (event) => {
     return;
   }
 
-  setStatus('Creating isolated scan job…');
+  setStatus('Starting repository scan…');
 
   try {
     const payload = await createJob(repoUrl);
     const destination = payload.jobUrl || `/job.html?id=${encodeURIComponent(payload.jobId)}`;
     window.location.assign(destination);
   } catch (error) {
-    setStatus(error.message || 'Could not create scan job.');
+    setStatus(error.message || 'Could not start scan.');
   }
 });
