@@ -91,7 +91,9 @@ function renderFindings(job) {
   const findings = job.result?.reportJson?.findings || [];
 
   if (job.status !== 'completed') {
-    findingsListNode.textContent = 'Waiting for scan results.';
+    findingsListNode.textContent = job.status === 'running'
+      ? 'Scan in progress. Results will appear here automatically.'
+      : 'Your scan is queued. Results will appear here automatically.';
     return;
   }
 
@@ -138,7 +140,7 @@ function renderSeveritySummary(job) {
   if (!entries.length) {
     const empty = document.createElement('div');
     empty.className = 'empty-state';
-    empty.textContent = 'Waiting for severity data.';
+    empty.textContent = 'Waiting for scan data.';
     severityNode.appendChild(empty);
     return;
   }
@@ -155,7 +157,7 @@ function renderArtifactClasses(job) {
   const artifactClasses = job.result?.artifactClasses || [];
 
   if (!artifactClasses.length) {
-    artifactClassesNode.appendChild(createPill('Awaiting artifact classes'));
+    artifactClassesNode.appendChild(createPill('Waiting for scan data'));
     return;
   }
 
@@ -227,14 +229,17 @@ async function pollJob() {
   } catch (error) {
     statusBadge.className = 'badge danger';
     statusBadge.textContent = 'ERROR';
-    findingsListNode.textContent = error.message || 'Could not load job.';
+    findingsListNode.textContent = error.message || 'Could not load this report.';
   }
 }
 
 if (!jobId) {
-  statusBadge.className = 'badge danger';
-  statusBadge.textContent = 'INVALID';
-  findingsListNode.textContent = 'Missing job ID.';
+  statusBadge.className = 'badge neutral';
+  statusBadge.textContent = 'READY';
+  titleNode.textContent = 'Scan report';
+  metaNode.textContent = 'Open a scan from the confirmation link to view its status.';
+  findingsListNode.textContent = 'Start a new scan to view report details.';
+  runnerStateNode.textContent = 'Timing and status updates appear here once a scan starts.';
 } else {
   pollJob();
 }

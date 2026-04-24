@@ -28,10 +28,10 @@ export async function getPublicRepoMetadata(owner, repo, env) {
 
   const payload = await response.json();
   if (payload.private) {
-    throw new Error('Private repositories are not supported in this MVP.');
+    throw new Error('Private repositories are not supported.');
   }
   if (payload.disabled || payload.archived) {
-    throw new Error('Archived or disabled repositories are not supported in this MVP.');
+    throw new Error('Archived or disabled repositories are not supported.');
   }
 
   const maxRepoSizeKb = getNumericEnv(env, 'MAX_REPO_SIZE_KB', 50000);
@@ -54,7 +54,7 @@ export async function getPublicRepoMetadata(owner, repo, env) {
 
 export async function dispatchScanWorkflow({ env, callbackUrl, job, repoMeta }) {
   if (!env?.GITHUB_API_TOKEN) {
-    throw new Error('GITHUB_API_TOKEN is required to dispatch scan workflows.');
+    throw new Error('Scan dispatch is not configured yet.');
   }
 
   const body = {
@@ -83,7 +83,7 @@ export async function dispatchScanWorkflow({ env, callbackUrl, job, repoMeta }) 
   );
 
   if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`Workflow dispatch failed: ${text || response.status}`);
+    await response.text();
+    throw new Error('Could not start the scan workflow. Please try again shortly.');
   }
 }

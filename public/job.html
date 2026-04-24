@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AAF Cloud Scan Result</title>
+    <title>AAF Cloud Scan Report</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <span class="brand-mark">AAF</span>
           <span>
             <span class="brand">AAF Cloud Scan</span>
-            <span class="eyebrow">Isolated public repo scan</span>
+            <span class="eyebrow">Repository scan report</span>
           </span>
         </a>
         <a class="header-link" href="/">New scan</a>
@@ -24,9 +24,9 @@
       <section class="panel wide-panel result-hero-panel">
         <div class="result-topline">
           <div>
-            <p class="badge" id="job-status-badge">Loading</p>
-            <h1 id="job-title">Scan job</h1>
-            <p class="lede" id="job-meta">Fetching job status…</p>
+            <p class="badge" id="job-status-badge">Ready</p>
+            <h1 id="job-title">Scan report</h1>
+            <p class="lede" id="job-meta">Open a scan from the confirmation link to view its status.</p>
           </div>
           <div class="summary-box">
             <div class="summary-value" id="score-value">--</div>
@@ -46,7 +46,7 @@
         </article>
         <article class="panel stat-card">
           <p class="section-kicker">Artifact classes</p>
-          <div id="artifact-classes" class="pill-row muted">Waiting for results</div>
+          <div id="artifact-classes" class="pill-row muted">Waiting for scan data</div>
         </article>
       </section>
 
@@ -56,7 +56,7 @@
             <p class="section-kicker">Severity summary</p>
             <h2>Risk at a glance</h2>
           </div>
-          <div id="severity-summary" class="stack-list muted">Waiting for results</div>
+          <div id="severity-summary" class="stack-list muted">Waiting for scan data</div>
         </article>
         <article class="panel">
           <div class="section-heading section-heading-left compact-heading">
@@ -67,7 +67,7 @@
             <button id="download-json" disabled>Download JSON</button>
             <button id="download-markdown" disabled>Download Markdown</button>
           </div>
-          <p class="hint">Downloads activate after the scan completes.</p>
+          <p class="hint">Downloads unlock when the scan is complete.</p>
         </article>
       </section>
 
@@ -76,15 +76,15 @@
           <p class="section-kicker">Findings</p>
           <h2>Detailed review</h2>
         </div>
-        <div id="findings-list" class="stack-list muted">Polling job status…</div>
+        <div id="findings-list" class="stack-list muted">Start a scan to view report details.</div>
       </section>
 
       <section class="panel wide-panel">
         <div class="section-heading section-heading-left compact-heading">
-          <p class="section-kicker">Runner state</p>
-          <h2>Execution details</h2>
+          <p class="section-kicker">Scan activity</p>
+          <h2>Scan timeline</h2>
         </div>
-        <div id="runner-state" class="stack-list muted">No runner data yet.</div>
+        <div id="runner-state" class="stack-list muted">Timing and status updates appear here once a scan starts.</div>
       </section>
     </main>
 
@@ -92,9 +92,9 @@
       <div class="wrap site-footer-row">
         <div>
           <div class="brand">AAF Cloud Scan</div>
-          <div class="eyebrow">Report view for isolated public repo scans</div>
+          <div class="eyebrow">Report view for repository scans</div>
         </div>
-        <div class="footer-note">Review verdict, findings, and downloadable outputs.</div>
+        <div class="footer-note">Verdict, findings, and downloadable reports.</div>
       </div>
     </footer>
 
