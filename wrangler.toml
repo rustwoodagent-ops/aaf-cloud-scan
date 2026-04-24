@@ -2,14 +2,6 @@ name = "aaf-cloud-scan"
 compatibility_date = "2026-04-23"
 pages_build_output_dir = "public"
 
-[[kv_namespaces]]
-binding = "JOBS_KV"
-id = "replace-with-jobs-kv-id"
-
-[[kv_namespaces]]
-binding = "RATE_LIMIT_KV"
-id = "replace-with-rate-limit-kv-id"
-
 [vars]
 PUBLIC_BASE_URL = "https://scan.agentartifactfirewall.com"
 GITHUB_OWNER = "rustwoodagent-ops"
