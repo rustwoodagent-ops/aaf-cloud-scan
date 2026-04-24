@@ -11,7 +11,7 @@ binding = "RATE_LIMIT_KV"
 id = "0909a5e50e8d4fce8e7c906254ab3f66"
 
 [vars]
-PUBLIC_BASE_URL = "https://scan.agentartifactfirewall.com"
+PUBLIC_BASE_URL = "https://aaf-cloud-scan.pages.dev"
 GITHUB_OWNER = "rustwoodagent-ops"
 GITHUB_REPO = "aaf-cloud-scan"
 GITHUB_WORKFLOW_FILE = "scan-job.yml"
