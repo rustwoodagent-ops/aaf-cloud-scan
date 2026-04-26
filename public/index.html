@@ -8,48 +8,114 @@
     <link rel="icon" type="image/svg+xml" href="/brand/aaf-cloud-scan-icon.svg">
     <link rel="stylesheet" href="/styles.css">
   </head>
-  <body>
+  <body class="home-v2">
     <header class="site-header">
       <div class="wrap site-header-row">
         <a class="brand-lockup" href="/" aria-label="AAF Cloud Scan home">
           <img class="brand-wordmark" src="/brand/aaf-cloud-scan-logo-nav-light.svg" alt="AAF Cloud Scan logo">
           <span class="sr-only">AAF Cloud Scan</span>
         </a>
-        <div class="header-note">Free public GitHub scanning for the GitHub community</div>
+        <div class="header-note">Public repo scanning for agent-era supply chain risk</div>
       </div>
     </header>
 
     <main>
-      <section class="hero hero-branded wrap">
-        <div class="hero-shell">
-          <div class="hero-copy">
-            <p class="badge badge-spotlight">Free for the GitHub community</p>
-            <h1>Scan agent-facing repositories before they reach your workflow.</h1>
-            <p class="hero-subheading">Before your agents run it, scan it.</p>
+      <section class="hero hero-branded wrap hero-v2">
+        <div class="hero-shell hero-shell-v2">
+          <div class="hero-copy hero-copy-v2">
+            <p class="badge badge-spotlight">Free public GitHub scanner</p>
+            <h1>Catch risky agent-facing repo files before they enter your workflow.</h1>
+            <p class="hero-subheading">Security review for SKILL.md, AGENTS.md, hooks, MCP configs, scripts, and repo instructions.</p>
             <p class="lede">
-              AAF Cloud Scan exists because malicious skills, hidden prompt instructions, unsafe hooks, poisoned MCP configs,
-              and deceptive repo scaffolding can look harmless right up until they reach an agent workflow. It gives the GitHub
-              community a fast way to inspect public repositories for agent-facing risk before install, merge, trust, or adoption.
+              AAF Cloud Scan helps maintainers, reviewers, and builders inspect public GitHub repositories for files that can steer,
+              poison, or abuse agent workflows before install, merge, or adoption.
             </p>
-            <div class="pill-row hero-pills" aria-label="core safeguards">
-              <span class="pill success">Free public scanner</span>
-              <span class="pill neutral">Public GitHub repositories only</span>
-              <span class="pill neutral">Readable JSON and Markdown reports</span>
+
+            <div class="hero-action-pills" aria-label="product trust points">
+              <span class="pill success">No target repo code execution</span>
+              <span class="pill neutral">Public repos only</span>
+              <span class="pill neutral">Readable verdicts + downloadable reports</span>
+            </div>
+
+            <div class="proof-strip" aria-label="scan proof summary">
+              <div class="proof-card">
+                <span class="proof-label">Verdict</span>
+                <strong>Safe / Review / High risk</strong>
+              </div>
+              <div class="proof-card">
+                <span class="proof-label">Checks</span>
+                <strong>Skills · hooks · MCP · scripts</strong>
+              </div>
+              <div class="proof-card">
+                <span class="proof-label">Outputs</span>
+                <strong>JSON + Markdown reports</strong>
+              </div>
+              <div class="proof-card">
+                <span class="proof-label">Execution model</span>
+                <strong>Isolated workflow with signed callback</strong>
+              </div>
             </div>
           </div>
 
-          <div class="hero-side">
-            <div class="panel hero-visual-panel">
-              <img class="hero-visual-image" src="/brand/aaf-cloud-scan-hero.svg" alt="AAF Cloud Scan security scanning hero illustration">
+          <div class="hero-side hero-side-v2">
+            <div class="panel report-preview-panel">
+              <div class="panel-kicker">Sample report snapshot</div>
+              <div class="report-preview-topline">
+                <div>
+                  <h2>Repository review verdict</h2>
+                  <p class="panel-copy">A believable preview of the kind of signal this tool is meant to surface fast.</p>
+                </div>
+                <span class="verdict-chip verdict-chip-warning">Needs review</span>
+              </div>
+
+              <div class="report-score-grid">
+                <div class="report-score-card">
+                  <span class="score-label">Risk score</span>
+                  <strong>68</strong>
+                </div>
+                <div class="report-score-card">
+                  <span class="score-label">Flagged findings</span>
+                  <strong>7</strong>
+                </div>
+                <div class="report-score-card">
+                  <span class="score-label">Artifact classes</span>
+                  <strong>4</strong>
+                </div>
+              </div>
+
+              <div class="finding-preview-list">
+                <article class="finding-preview finding-preview-danger">
+                  <div>
+                    <h3>Prompt-injection language in SKILL.md</h3>
+                    <p>Approval-bypass phrasing and hidden operator instructions detected in skill guidance.</p>
+                  </div>
+                  <span class="finding-severity severity-danger">High</span>
+                </article>
+                <article class="finding-preview finding-preview-warning">
+                  <div>
+                    <h3>Unsafe hook execution path</h3>
+                    <p>Repository hook references shell execution patterns that deserve manual review before trust.</p>
+                  </div>
+                  <span class="finding-severity severity-warning">Medium</span>
+                </article>
+                <article class="finding-preview finding-preview-neutral">
+                  <div>
+                    <h3>MCP configuration exposure</h3>
+                    <p>Config shape suggests tool access expansion and outbound workflow capability.</p>
+                  </div>
+                  <span class="finding-severity severity-neutral">Review</span>
+                </article>
+              </div>
             </div>
-            <div class="panel form-panel hero-form-panel">
+
+            <div class="panel form-panel hero-form-panel hero-form-panel-v2">
               <div class="panel-kicker">Start a repository scan</div>
               <h2>Paste a public GitHub repository URL</h2>
               <p class="panel-copy">
-                Queue a scan, open a report, and review verdicts, findings, and downloadable outputs in one place.
+                Queue a scan, open a report, and review verdicts, flagged files, and downloadable outputs in one place.
               </p>
               <div class="support-note">
-                <strong>Free right now:</strong> built for the GitHub community to review agent-facing repos before install, merge, or adoption.
+                <strong>Free right now:</strong> built for the GitHub community while the product matures.
               </div>
               <form id="scan-form">
                 <label for="repo-url">GitHub repository URL</label>
@@ -63,131 +129,110 @@
         </div>
       </section>
 
-      <section class="wrap section-block">
-        <div class="panel wide-panel access-panel">
-          <div class="section-heading section-heading-left">
-            <p class="section-kicker">Use it your way</p>
-            <h2>Use the hosted scanner, review the GitHub repository, or run it from the command line.</h2>
+      <section class="wrap section-block threat-surface-section">
+        <div class="panel wide-panel threat-surface-panel">
+          <div class="section-heading section-heading-left compact-heading">
+            <p class="section-kicker">Why this matters</p>
+            <h2>The new attack surface is often outside the application code.</h2>
             <p>
-              If people prefer, they can use this hosted page, go straight to the GitHub repository, or use the action and command-line workflow directly in their own environment.
+              Agent workflows can be compromised by repo-level files that shape what the agent sees, trusts, and executes.
+              That is why this scanner is built to surface risky instructions and automation artifacts early.
             </p>
           </div>
-          <div class="feature-grid feature-grid-three access-grid">
-            <article class="panel feature-card access-card">
-              <div class="card-icon">01</div>
-              <h3>Hosted web scanner</h3>
-              <p class="card-copy">Paste a public GitHub repository URL here and get a readable report without local setup.</p>
-            </article>
-            <article class="panel feature-card access-card">
-              <div class="card-icon">02</div>
-              <h3>GitHub repository</h3>
-              <p class="card-copy">Prefer to inspect the project directly? Open the repository and review the action, code, and docs yourself.</p>
-              <p><a class="text-link" href="https://github.com/rustwoodagent-ops/aaf-cloud-scan" target="_blank" rel="noreferrer noopener">View the GitHub repository</a></p>
-            </article>
-            <article class="panel feature-card access-card">
-              <div class="card-icon">03</div>
-              <h3>Command line / action flow</h3>
-              <p class="card-copy">Teams that want CI or local workflows can use the GitHub action path or run the scanner from the command line in their own process.</p>
-            </article>
+          <div class="threat-chip-grid" aria-label="files and artifact types reviewed">
+            <span class="threat-chip">SKILL.md instruction packs</span>
+            <span class="threat-chip">AGENTS.md repo guidance</span>
+            <span class="threat-chip">Hooks and bootstrap scripts</span>
+            <span class="threat-chip">MCP configs</span>
+            <span class="threat-chip">Plugin manifests</span>
+            <span class="threat-chip">Prompt-injection phrasing</span>
+            <span class="threat-chip">Approval-bypass language</span>
+            <span class="threat-chip">Secret access attempts</span>
           </div>
         </div>
       </section>
 
       <section class="wrap section-block">
-        <div class="section-heading">
-          <p class="section-kicker">What it checks</p>
-          <h2>Repository trust review for agent-facing files.</h2>
-          <p>
-            Focused coverage for the files that shape agent behaviour, tool access, and workflow automation.
-          </p>
+        <div class="section-heading compact-heading">
+          <p class="section-kicker">What the product gives you</p>
+          <h2>Fast review signal, not just a generic scan form.</h2>
+          <p>Designed to make trust decisions easier before install, merge, or adoption.</p>
         </div>
-        <div class="feature-grid feature-grid-three">
-          <article class="panel feature-card">
+        <div class="feature-grid feature-grid-three product-outcome-grid">
+          <article class="panel feature-card product-outcome-card">
             <div class="card-icon">01</div>
-            <h3>What gets scanned</h3>
-            <p class="card-copy">Review the files most likely to change prompts, tools, hooks, and runtime behaviour.</p>
-            <ul class="clean-list">
-              <li>Agent skills and instruction packs</li>
-              <li>Hooks and automation scripts</li>
-              <li>MCP configuration files</li>
-              <li>Plugin manifests and repo instructions</li>
-            </ul>
+            <h3>Clear verdicts</h3>
+            <p class="card-copy">Understand quickly whether a repo looks safe, needs review, or carries obvious agent-facing risk.</p>
           </article>
-          <article class="panel feature-card">
+          <article class="panel feature-card product-outcome-card">
             <div class="card-icon">02</div>
-            <h3>How it works</h3>
-            <p class="card-copy">A fast path from repository URL to a report your team can review immediately.</p>
-            <ol class="clean-list ordered-list">
-              <li>Validate the public GitHub repository URL</li>
-              <li>Queue an isolated scan workflow</li>
-              <li>Review verdict, findings, and exports</li>
-            </ol>
+            <h3>Actionable findings</h3>
+            <p class="card-copy">See flagged files, artifact classes, and why they deserve scrutiny without digging through raw logs.</p>
           </article>
-          <article class="panel feature-card">
+          <article class="panel feature-card product-outcome-card">
             <div class="card-icon">03</div>
-            <h3>Built-in safeguards</h3>
-            <p class="card-copy">Narrow scope, predictable controls, and a report-first workflow designed for trust.</p>
-            <ul class="clean-list">
-              <li>Strict GitHub URL validation</li>
-              <li>Public repositories only</li>
-              <li>Rate limits and repository size checks</li>
-              <li>No target repo code execution</li>
-            </ul>
+            <h3>Exportable reports</h3>
+            <p class="card-copy">Download JSON and Markdown outputs for internal review, audit notes, and handoff workflows.</p>
           </article>
         </div>
       </section>
 
       <section class="wrap section-block">
-        <div class="panel wide-panel story-panel">
-          <div class="section-heading section-heading-left">
-            <p class="section-kicker">Why this exists</p>
-            <h2>It was created because malicious agent-facing repo content is becoming a real attack surface.</h2>
-            <p>
-              Traditional code review often focuses on application logic, but modern agent workflows can be compromised by files
-              that sit around the code: SKILL.md instructions, AGENTS.md guidance, hook definitions, MCP configs, plugin manifests,
-              bootstrap scripts, and other repo-level artifacts that shape what an agent sees, trusts, and executes.
-            </p>
-            <p>
-              AAF Cloud Scan was created to catch that class of risk earlier. It helps reviewers spot malicious skills, hidden prompt
-              injection, approval-bypass language, secret access attempts, unsafe automation hooks, and other agent-targeted traps
-              before those files are allowed into a workflow.
-            </p>
+        <div class="panel wide-panel workflow-panel">
+          <div class="section-heading section-heading-left compact-heading">
+            <p class="section-kicker">How it works</p>
+            <h2>A narrow, trust-first scan flow.</h2>
+            <p>The product is intentionally scoped to review public GitHub repositories without executing target repo code.</p>
           </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <h3>Clear verdicts</h3>
-              <p>Understand the overall outcome quickly, with severity and supporting context at a glance.</p>
-            </div>
-            <div class="story-card">
-              <h3>Readable findings</h3>
-              <p>Review structured findings without digging through raw logs or piecing together workflow output.</p>
-            </div>
-            <div class="story-card">
-              <h3>Downloadable reports</h3>
-              <p>Export JSON and Markdown for security review, internal sharing, or audit records.</p>
-            </div>
+          <div class="workflow-grid">
+            <article class="workflow-step panel">
+              <div class="workflow-step-number">01</div>
+              <h3>Validate the repository</h3>
+              <p>Check that the URL is a supported public GitHub repo and apply size and scope guardrails before queueing.</p>
+            </article>
+            <article class="workflow-step panel">
+              <div class="workflow-step-number">02</div>
+              <h3>Run an isolated review</h3>
+              <p>Queue an isolated workflow that inspects agent-facing files and returns a signed callback with the result.</p>
+            </article>
+            <article class="workflow-step panel">
+              <div class="workflow-step-number">03</div>
+              <h3>Review the output</h3>
+              <p>Open a readable report page with verdict, findings, severity context, and downloadable report formats.</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="wrap section-block">
-        <div class="panel wide-panel community-panel">
-          <div class="section-heading section-heading-left">
-            <p class="section-kicker">Free access</p>
-            <h2>Made to help the GitHub community catch risky agent artifacts earlier.</h2>
-            <p>
-              This scanner is currently free for public GitHub repositories so maintainers, security reviewers,
-              and curious builders can check agent-facing files without friction.
-            </p>
+        <div class="panel wide-panel safeguards-panel">
+          <div class="section-heading section-heading-left compact-heading">
+            <p class="section-kicker">Trust model</p>
+            <h2>Built to reduce review friction without pretending to be magic.</h2>
           </div>
-          <div class="story-grid community-grid community-grid-simple">
-            <div class="story-card accent-card">
-              <h3>Free public scans</h3>
-              <p>No paywall for baseline repo checks while the product matures.</p>
+          <div class="safeguards-grid">
+            <div class="safeguard-list-block">
+              <h3>Guardrails</h3>
+              <ul class="clean-list">
+                <li>Strict GitHub URL validation</li>
+                <li>Public repositories only</li>
+                <li>Rate limits and repository size checks</li>
+                <li>No target repo code execution</li>
+              </ul>
             </div>
-            <div class="story-card accent-card">
-              <h3>Focused on agent-era risk</h3>
-              <p>Skills, hooks, scripts, MCP configs, and instruction files get first-class attention.</p>
+            <div class="safeguard-list-block">
+              <h3>Trust signals</h3>
+              <ul class="clean-list">
+                <li>Readable verdict categories</li>
+                <li>Structured findings with context</li>
+                <li>Downloadable JSON and Markdown</li>
+                <li>Signed callback flow for result integrity</li>
+              </ul>
+            </div>
+            <div class="safeguard-access-block">
+              <h3>Use it your way</h3>
+              <p class="card-copy">Use the hosted scanner, inspect the GitHub repository directly, or wire the command-line and action flow into your own review process.</p>
+              <p><a class="text-link" href="https://github.com/rustwoodagent-ops/aaf-cloud-scan" target="_blank" rel="noreferrer noopener">View the GitHub repository</a></p>
             </div>
           </div>
         </div>
