@@ -50,6 +50,12 @@ Current scaffold approach:
 - no arbitrary code execution from the scanned repo
 - clear queued, running, completed, and failed states
 
+## Planned next scan tier
+
+- lightweight mode for very large repositories
+- focus on high-value agent-facing artifacts first (`SKILL.md`, `AGENTS.md`, hooks, MCP configs, manifests, bootstrap scripts)
+- intended to provide partial trust signal without requiring a full heavy repo extraction path
+
 ## Local structure
 
 - `public/` - static Pages frontend

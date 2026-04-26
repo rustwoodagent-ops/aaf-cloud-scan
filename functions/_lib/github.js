@@ -2,6 +2,14 @@ import { getNumericEnv } from './validation.js';
 
 const BASE_URL = 'https://api.github.com';
 
+function formatKb(kb) {
+  const value = Number(kb || 0);
+  if (!Number.isFinite(value) || value < 0) return '0 KB';
+  if (value >= 1000 * 1000) return `${(value / (1000 * 1000)).toFixed(2)} GB`;
+  if (value >= 1000) return `${(value / 1000).toFixed(1)} MB`;
+  return `${Math.round(value)} KB`;
+}
+
 async function githubRequest(path, env, options = {}) {
   const headers = new Headers(options.headers || {});
   headers.set('accept', 'application/vnd.github+json');
@@ -34,9 +42,12 @@ export async function getPublicRepoMetadata(owner, repo, env) {
     throw new Error('Archived or disabled repositories are not supported.');
   }
 
-  const maxRepoSizeKb = getNumericEnv(env, 'MAX_REPO_SIZE_KB', 50000);
-  if (Number(payload.size || 0) > maxRepoSizeKb) {
-    throw new Error(`Repository exceeds the current size limit of ${maxRepoSizeKb} KB.`);
+  const maxRepoSizeKb = getNumericEnv(env, 'MAX_REPO_SIZE_KB', 1000000);
+  const repoSizeKb = Number(payload.size || 0);
+  if (repoSizeKb > maxRepoSizeKb) {
+    throw new Error(
+      `Repository is too large for the current scan tier. Detected size: ${repoSizeKb} KB (${formatKb(repoSizeKb)}). Current limit: ${maxRepoSizeKb} KB (${formatKb(maxRepoSizeKb)}). This limit exists to keep scans fast, safe, and predictable.`
+    );
   }
 
   return {
@@ -46,7 +57,7 @@ export async function getPublicRepoMetadata(owner, repo, env) {
     repoUrl: payload.html_url || `https://github.com/${owner}/${repo}`,
     apiUrl: payload.url,
     defaultBranch: payload.default_branch || 'main',
-    sizeKb: Number(payload.size || 0),
+    sizeKb: repoSizeKb,
     description: payload.description || '',
     tarballApiUrl: `${BASE_URL}/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/tarball/${encodeURIComponent(payload.default_branch || 'main')}`
   };
