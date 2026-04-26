@@ -910,8 +910,7 @@ button:disabled {
 }
 
 .hero-cta-row {
-  display: flex;
-  justify-content: center;
+  display: block;
   width: 100%;
   margin-top: 1.35rem;
 }
@@ -1088,6 +1087,7 @@ button:disabled {
 }
 
 .hero-form-panel-centered {
+  display: block;
   width: 100%;
   max-width: none;
   margin-inline: auto;
