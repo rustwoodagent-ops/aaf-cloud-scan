@@ -374,11 +374,13 @@ main {
 
 .badge,
 .pill {
+  max-width: 100%;
   padding: 0.42rem 0.76rem;
   font-size: 0.79rem;
   font-weight: 580;
   letter-spacing: 0.01em;
   border: 1px solid rgba(122, 144, 183, 0.18);
+  overflow-wrap: anywhere;
 }
 
 .badge-spotlight {
@@ -745,10 +747,14 @@ button:disabled {
   font-weight: 570;
   line-height: 1.28;
   letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .finding p {
   margin: 0.35rem 0 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .finding-meta {
@@ -762,6 +768,9 @@ button:disabled {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.89rem;
   color: #c7def6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 
 .status-note {
@@ -1447,6 +1456,22 @@ button:disabled {
   .report-score-card strong {
     font-size: 0.92rem;
     line-height: 1.52;
+  }
+
+  .finding {
+    overflow: hidden;
+  }
+
+  .finding h3,
+  .finding p,
+  .finding .codeish,
+  .finding .pill {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .finding-meta {
+    gap: 0.4rem;
   }
 
   .hero-form-panel .panel-copy {
