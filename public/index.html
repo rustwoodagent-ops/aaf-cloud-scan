@@ -15,7 +15,7 @@
           <img class="brand-wordmark" src="/brand/aaf-cloud-scan-logo-nav-light.svg" alt="AAF Cloud Scan logo">
           <span class="sr-only">AAF Cloud Scan</span>
         </a>
-        <div class="header-note">Public repo scanning for agent-era supply chain risk</div>
+        <div class="header-note">Agent-era repository trust review</div>
       </div>
     </header>
 
@@ -30,6 +30,10 @@
               AAF Cloud Scan helps maintainers, reviewers, and builders inspect public GitHub repositories for files that can steer,
               poison, or abuse agent workflows before install, merge, or adoption.
             </p>
+            <div class="hero-micro-proof">
+              <span class="hero-micro-proof-label">Built for trust-sensitive review</span>
+              <p>Focused on the files that shape agent behaviour, not just the application code underneath them.</p>
+            </div>
 
             <div class="hero-action-pills" aria-label="product trust points">
               <span class="pill success">No target repo code execution</span>
@@ -59,6 +63,9 @@
 
           <div class="hero-side hero-side-v2">
             <div class="panel report-preview-panel">
+              <div class="report-window-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
               <div class="panel-kicker">Sample report snapshot</div>
               <div class="report-preview-topline">
                 <div>
@@ -83,6 +90,12 @@
                 </div>
               </div>
 
+              <div class="report-runline">
+                <span>run 05a7ffd9</span>
+                <span>public github repo</span>
+                <span>signed callback</span>
+              </div>
+
               <div class="finding-preview-list">
                 <article class="finding-preview finding-preview-danger">
                   <div>
@@ -105,6 +118,17 @@
                   </div>
                   <span class="finding-severity severity-neutral">Review</span>
                 </article>
+              </div>
+
+              <div class="report-preview-footer">
+                <div>
+                  <span class="score-label">Exports</span>
+                  <strong>JSON report · Markdown brief</strong>
+                </div>
+                <div>
+                  <span class="score-label">Review posture</span>
+                  <strong>Fast signal before install or merge</strong>
+                </div>
               </div>
             </div>
 
@@ -138,6 +162,7 @@
               Agent workflows can be compromised by repo-level files that shape what the agent sees, trusts, and executes.
               That is why this scanner is built to surface risky instructions and automation artifacts early.
             </p>
+            <div class="threat-surface-emphasis">Agent risk can hide in repo instructions, hooks, manifests, and config long before anyone notices at runtime.</div>
           </div>
           <div class="threat-chip-grid" aria-label="files and artifact types reviewed">
             <span class="threat-chip">SKILL.md instruction packs</span>
