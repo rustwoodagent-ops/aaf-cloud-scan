@@ -17,6 +17,14 @@ const downloadMarkdownButton = document.querySelector('#download-markdown');
 let latestJob = null;
 let pollHandle = null;
 
+function getWaitMessage(status) {
+  if (status === 'running') {
+    return 'Scan in progress. Most scans complete in around 1–3 minutes depending on repository size and GitHub Actions queue. Keep this page open — it updates automatically.';
+  }
+
+  return 'Your scan is queued. It should usually begin within a minute or two, then complete shortly after depending on repository size and GitHub Actions queue. Keep this page open — it updates automatically.';
+}
+
 function badgeClassForStatus(status) {
   if (status === 'completed') return 'success';
   if (status === 'failed') return 'danger';
@@ -74,6 +82,7 @@ function renderRunnerState(job) {
   const rows = [
     createMetaRow('Job ID', job.id),
     createMetaRow('Status', job.status),
+    createMetaRow('Expected timing', job.status === 'completed' || job.status === 'failed' ? 'Finished' : 'Usually 1–3 minutes, depending on queue and repo size'),
     createMetaRow('Created', job.createdAt || 'n/a'),
     createMetaRow('Updated', job.updatedAt || 'n/a')
   ];
@@ -91,9 +100,7 @@ function renderFindings(job) {
   const findings = job.result?.reportJson?.findings || [];
 
   if (job.status !== 'completed') {
-    findingsListNode.textContent = job.status === 'running'
-      ? 'Scan in progress. Results will appear here automatically.'
-      : 'Your scan is queued. Results will appear here automatically.';
+    findingsListNode.textContent = getWaitMessage(job.status);
     return;
   }
 
@@ -187,7 +194,9 @@ function renderJob(job) {
   statusBadge.className = `badge ${badgeClassForStatus(job.status)}`;
   statusBadge.textContent = job.status.toUpperCase();
   titleNode.textContent = `${job.owner}/${job.repo}`;
-  metaNode.textContent = job.repoUrl;
+  metaNode.textContent = job.status === 'completed' || job.status === 'failed'
+    ? job.repoUrl
+    : `${job.repoUrl} — ${getWaitMessage(job.status)}`;
   scoreNode.textContent = job.result?.score ?? '--';
   verdictNode.textContent = job.result?.verdict || '--';
   findingsNode.textContent = job.result?.findingsCount ?? '--';
