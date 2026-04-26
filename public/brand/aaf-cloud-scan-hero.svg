@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">AAF Cloud Scan hero header</title>
+<desc id="desc">A professional SaaS hero illustration for AAF Cloud Scan showing a cloud shield, repository scan workflow, and security report dashboard.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#07111F"/>
+    <stop offset="0.44" stop-color="#0B1528"/>
+    <stop offset="1" stop-color="#102338"/>
+  </linearGradient>
+  <radialGradient id="orb1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(470 282) rotate(55) scale(700 540)">
+    <stop stop-color="#22D3EE" stop-opacity="0.32"/>
+    <stop offset="0.55" stop-color="#22D3EE" stop-opacity="0.08"/>
+    <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orb2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1476 664) rotate(120) scale(740 560)">
+    <stop stop-color="#34D399" stop-opacity="0.22"/>
+    <stop offset="0.6" stop-color="#34D399" stop-opacity="0.06"/>
+    <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="436" y1="165" x2="1356" y2="900" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#38BDF8"/>
+    <stop offset="0.5" stop-color="#22D3EE"/>
+    <stop offset="1" stop-color="#34D399"/>
+  </linearGradient>
+  <linearGradient id="panel" x1="884" y1="176" x2="1578" y2="908" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#132740" stop-opacity="0.94"/>
+    <stop offset="1" stop-color="#091727" stop-opacity="0.96"/>
+  </linearGradient>
+  <linearGradient id="scan" x1="220" y1="0" x2="750" y2="0" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#22D3EE" stop-opacity="0"/>
+    <stop offset="0.48" stop-color="#22D3EE" stop-opacity="0.46"/>
+    <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="softShadow" x="-200" y="-200" width="2400" height="1400" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="34" stdDeviation="44" flood-color="#020617" flood-opacity="0.42"/>
+  </filter>
+  <filter id="glow" x="-100" y="-100" width="2100" height="1300" filterUnits="userSpaceOnUse">
+    <feDropShadow dx="0" dy="0" stdDeviation="28" flood-color="#22D3EE" flood-opacity="0.25"/>
+  </filter>
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+    <path d="M64 0H0V64" stroke="#8CA9C8" stroke-opacity="0.08" stroke-width="1"/>
+  </pattern>
+  <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="2" fill="#B8F7E4" fill-opacity="0.14"/>
+  </pattern>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<rect width="1920" height="1080" fill="url(#grid)"/>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#dots)" opacity="0.45"/>
+<rect width="1920" height="1080" fill="url(#orb1)"/>
+<rect width="1920" height="1080" fill="url(#orb2)"/>
+
+<!-- scan light sweep -->
+<path d="M226 130L884 968" stroke="url(#scan)" stroke-width="190" stroke-linecap="round" opacity="0.48"/>
+<path d="M100 870C388 690 648 710 942 835C1226 956 1482 928 1814 706" stroke="#22D3EE" stroke-opacity="0.13" stroke-width="3"/>
+<path d="M82 760C412 562 698 594 1020 716C1278 814 1524 780 1828 548" stroke="#34D399" stroke-opacity="0.11" stroke-width="3"/>
+
+<!-- headline lockup integrated subtly -->
+<g transform="translate(126 102)">
+  <rect x="0" y="0" width="266" height="54" rx="27" fill="#0E2438" stroke="#244B6D"/>
+  <circle cx="31" cy="27" r="10" fill="#34D399"/>
+  <text x="52" y="35" font-family="Inter, Lato, Arial, sans-serif" font-size="20" font-weight="750" fill="#B8F7E4">Review first. Install later.</text>
+</g>
+<text x="128" y="232" font-family="Inter, Lato, Arial, sans-serif" font-size="68" font-weight="850" letter-spacing="-2" fill="#F7FBFF">Agent-facing repo</text>
+<text x="128" y="306" font-family="Inter, Lato, Arial, sans-serif" font-size="68" font-weight="850" letter-spacing="-2" fill="#F7FBFF">security scanning</text>
+<text x="132" y="360" font-family="Inter, Lato, Arial, sans-serif" font-size="25" font-weight="550" fill="#A9C0D8">Risky hooks, MCP configs, scripts, plugin files,</text>
+<text x="132" y="395" font-family="Inter, Lato, Arial, sans-serif" font-size="25" font-weight="550" fill="#A9C0D8">and repo instructions surfaced before adoption.</text>
+
+<!-- left workflow cards -->
+<g filter="url(#softShadow)">
+  <g transform="translate(126 510)">
+    <rect width="442" height="118" rx="28" fill="#0D2034" stroke="#254564" stroke-width="1.5"/>
+    <circle cx="64" cy="59" r="26" fill="#132F46" stroke="#22D3EE" stroke-width="3"/>
+    <path d="M54 59H72M66 50L76 59L66 68" stroke="#BFF7FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="110" y="51" font-family="Inter, Lato, Arial, sans-serif" font-size="26" font-weight="780" fill="#F5FBFF">Public GitHub repo</text>
+    <text x="110" y="84" font-family="Inter, Lato, Arial, sans-serif" font-size="20" font-weight="520" fill="#8FA9C3">URL validation and size checks</text>
+  </g>
+  <g transform="translate(180 676)">
+    <rect width="452" height="118" rx="28" fill="#0D2034" stroke="#254564" stroke-width="1.5"/>
+    <circle cx="64" cy="59" r="26" fill="#132F46" stroke="#22D3EE" stroke-width="3"/>
+    <path d="M52 61L62 71L80 49" stroke="#BFF7FF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="110" y="51" font-family="Inter, Lato, Arial, sans-serif" font-size="26" font-weight="780" fill="#F5FBFF">Isolated workflow</text>
+    <text x="110" y="84" font-family="Inter, Lato, Arial, sans-serif" font-size="20" font-weight="520" fill="#8FA9C3">No target repository code execution</text>
+  </g>
+  <g transform="translate(126 842)">
+    <rect width="442" height="118" rx="28" fill="#0D2034" stroke="#254564" stroke-width="1.5"/>
+    <circle cx="64" cy="59" r="26" fill="#132F46" stroke="#34D399" stroke-width="3"/>
+    <path d="M51 70H79M51 58H79M51 46H79" stroke="#B8F7E4" stroke-width="5.5" stroke-linecap="round"/>
+    <text x="110" y="51" font-family="Inter, Lato, Arial, sans-serif" font-size="26" font-weight="780" fill="#F5FBFF">Readable reports</text>
+    <text x="110" y="84" font-family="Inter, Lato, Arial, sans-serif" font-size="20" font-weight="520" fill="#8FA9C3">JSON and Markdown outputs</text>
+  </g>
+</g>
+
+<!-- central cloud shield -->
+<g filter="url(#glow)" transform="translate(578 206)">
+  <path d="M236 470C236 386 300 324 379 324C410 245 487 194 578 194C705 194 807 296 807 423C885 444 941 512 941 598C941 701 859 783 756 783H296C202 783 128 709 128 615C128 536 184 478 236 470Z" fill="#EAF8FF" fill-opacity="0.98"/>
+  <path d="M534 266L724 337V485C724 614 637 731 534 767C431 731 344 614 344 485V337L534 266Z" fill="#081525" fill-opacity="0.68" stroke="url(#aqua)" stroke-width="18" stroke-linejoin="round"/>
+  <circle cx="542" cy="482" r="128" stroke="url(#aqua)" stroke-width="28" fill="#071525" fill-opacity="0.42"/>
+  <path d="M634 574L728 668" stroke="url(#aqua)" stroke-width="31" stroke-linecap="round"/>
+  <path d="M445 481H507M542 481H604M477 550H580" stroke="#F2FBFF" stroke-width="20" stroke-linecap="round" stroke-opacity="0.96"/>
+  <text x="536" y="390" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="48" font-weight="900" letter-spacing="6" fill="#BFF7FF">AAF</text>
+</g>
+
+<!-- connectors -->
+<path d="M572 570C650 548 698 526 762 486" stroke="#22D3EE" stroke-width="4" stroke-opacity="0.38" stroke-dasharray="12 16"/>
+<path d="M636 735C714 728 758 704 802 652" stroke="#34D399" stroke-width="4" stroke-opacity="0.42" stroke-dasharray="12 16"/>
+<path d="M568 900C666 882 732 822 818 720" stroke="#22D3EE" stroke-width="4" stroke-opacity="0.25" stroke-dasharray="12 16"/>
+
+<!-- right report panel -->
+<g transform="translate(1034 168)" filter="url(#softShadow)">
+  <rect x="0" y="0" width="748" height="768" rx="42" fill="url(#panel)" stroke="#294C6E" stroke-width="2"/>
+  <rect x="0" y="0" width="748" height="80" rx="42" fill="#12263F"/>
+  <path d="M0 48C0 21.49 21.49 0 48 0H700C726.51 0 748 21.49 748 48V80H0V48Z" fill="#12263F"/>
+  <circle cx="46" cy="40" r="10" fill="#FF6B6B"/>
+  <circle cx="78" cy="40" r="10" fill="#F7C948"/>
+  <circle cx="110" cy="40" r="10" fill="#34D399"/>
+  <text x="150" y="49" font-family="Inter, Lato, Arial, sans-serif" font-size="22" font-weight="760" fill="#DDF6FF">AAF Cloud Scan / security report</text>
+  <rect x="44" y="116" width="280" height="52" rx="26" fill="#12344C" stroke="#22D3EE" stroke-opacity="0.55"/>
+  <circle cx="74" cy="142" r="9" fill="#34D399"/>
+  <text x="94" y="150" font-family="Inter, Lato, Arial, sans-serif" font-size="20" font-weight="760" fill="#B8F7E4">Verdict ready</text>
+  <text x="44" y="230" font-family="Inter, Lato, Arial, sans-serif" font-size="38" font-weight="850" letter-spacing="-0.8" fill="#F7FBFF">Repository trust review</text>
+  <text x="44" y="272" font-family="Inter, Lato, Arial, sans-serif" font-size="22" font-weight="540" fill="#9EB5CD">Agent behaviour files checked before workflow adoption.</text>
+  <g transform="translate(44 322)">
+    <rect width="660" height="98" rx="24" fill="#0D2034" stroke="#264765"/>
+    <rect x="26" y="27" width="54" height="54" rx="16" fill="#132F46" stroke="#22D3EE" stroke-opacity="0.8"/>
+    <path d="M42 56L52 66L69 43" stroke="#BFF7FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="105" y="44" font-family="Inter, Lato, Arial, sans-serif" font-size="22" font-weight="780" fill="#F4FBFF">Hooks and automation scripts</text>
+    <text x="105" y="72" font-family="Inter, Lato, Arial, sans-serif" font-size="18" font-weight="520" fill="#8FA9C3">Scan for install-time or workflow-altering behaviour</text>
+    <rect x="548" y="32" width="92" height="34" rx="17" fill="#183A33" stroke="#34D399" stroke-opacity="0.45"/>
+    <text x="594" y="55" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="15" font-weight="800" fill="#B8F7E4">PASS</text>
+  </g>
+  <g transform="translate(44 448)">
+    <rect width="660" height="98" rx="24" fill="#0D2034" stroke="#264765"/>
+    <rect x="26" y="27" width="54" height="54" rx="16" fill="#132F46" stroke="#22D3EE" stroke-opacity="0.8"/>
+    <path d="M51 40H65M51 54H75M51 68H69M39 41H42M39 55H42M39 69H42" stroke="#BFF7FF" stroke-width="4.6" stroke-linecap="round"/>
+    <text x="105" y="44" font-family="Inter, Lato, Arial, sans-serif" font-size="22" font-weight="780" fill="#F4FBFF">MCP and plugin configuration</text>
+    <text x="105" y="72" font-family="Inter, Lato, Arial, sans-serif" font-size="18" font-weight="520" fill="#8FA9C3">Surface tool access, permissions, and manifests</text>
+    <rect x="522" y="32" width="118" height="34" rx="17" fill="#3C2E12" stroke="#F7C948" stroke-opacity="0.56"/>
+    <text x="581" y="55" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="15" font-weight="800" fill="#FFE8A3">REVIEW</text>
+  </g>
+  <g transform="translate(44 574)">
+    <rect width="660" height="98" rx="24" fill="#0D2034" stroke="#264765"/>
+    <rect x="26" y="27" width="54" height="54" rx="16" fill="#132F46" stroke="#34D399" stroke-opacity="0.8"/>
+    <path d="M39 43H69M39 56H65M39 69H72" stroke="#B8F7E4" stroke-width="5" stroke-linecap="round"/>
+    <text x="105" y="44" font-family="Inter, Lato, Arial, sans-serif" font-size="22" font-weight="780" fill="#F4FBFF">Repo instructions and agent skills</text>
+    <text x="105" y="72" font-family="Inter, Lato, Arial, sans-serif" font-size="18" font-weight="520" fill="#8FA9C3">Readable findings with supporting context</text>
+    <rect x="548" y="32" width="92" height="34" rx="17" fill="#183A33" stroke="#34D399" stroke-opacity="0.45"/>
+    <text x="594" y="55" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="15" font-weight="800" fill="#B8F7E4">PASS</text>
+  </g>
+  <path d="M44 710H704" stroke="#294C6E" stroke-width="2"/>
+  <text x="44" y="742" font-family="Inter, Lato, Arial, sans-serif" font-size="18" font-weight="650" fill="#93AFCB">Exports:</text>
+  <rect x="126" y="719" width="86" height="34" rx="17" fill="#10273B" stroke="#274A68"/>
+  <text x="169" y="742" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="15" font-weight="800" fill="#CFEFFF">JSON</text>
+  <rect x="226" y="719" width="126" height="34" rx="17" fill="#10273B" stroke="#274A68"/>
+  <text x="289" y="742" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="15" font-weight="800" fill="#CFEFFF">Markdown</text>
+</g>
+
+<!-- floating file chips -->
+<g filter="url(#softShadow)" font-family="Inter, Lato, Arial, sans-serif">
+  <g transform="translate(724 116)">
+    <rect width="210" height="54" rx="27" fill="#0D2034" stroke="#264765"/>
+    <circle cx="30" cy="27" r="8" fill="#22D3EE"/>
+    <text x="50" y="34" font-size="18" font-weight="750" fill="#DDF6FF">AGENTS.md</text>
+  </g>
+  <g transform="translate(726 866)">
+    <rect width="246" height="54" rx="27" fill="#0D2034" stroke="#264765"/>
+    <circle cx="30" cy="27" r="8" fill="#34D399"/>
+    <text x="50" y="34" font-size="18" font-weight="750" fill="#DDF6FF">mcp.config.json</text>
+  </g>
+  <g transform="translate(1420 78)">
+    <rect width="318" height="54" rx="27" fill="#0D2034" stroke="#264765"/>
+    <circle cx="30" cy="27" r="8" fill="#F7C948"/>
+    <text x="50" y="34" font-size="18" font-weight="750" fill="#DDF6FF">.github/workflows</text>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">AAF Cloud Scan icon</title>
+<desc id="desc">Square app icon showing a shield, cloud, and scan ring for AAF Cloud Scan.</desc>
+<defs>
+  <radialGradient id="radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(312 190) rotate(52) scale(870)">
+    <stop stop-color="#1E3A5F"/>
+    <stop offset="0.5" stop-color="#0B1528"/>
+    <stop offset="1" stop-color="#07101D"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="230" y1="220" x2="760" y2="790" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#38BDF8"/>
+    <stop offset="0.52" stop-color="#22D3EE"/>
+    <stop offset="1" stop-color="#34D399"/>
+  </linearGradient>
+  <filter id="shadow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse">
+    <feDropShadow dx="0" dy="40" stdDeviation="45" flood-color="#020617" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="40" flood-color="#22D3EE" flood-opacity="0.18"/>
+  </filter>
+</defs>
+<rect x="64" y="64" width="896" height="896" rx="224" fill="url(#radial)" stroke="#244B6D" stroke-width="8"/>
+<path d="M512 156L762 250V446C762 616 648 769 512 816C376 769 262 616 262 446V250L512 156Z" fill="#081525" stroke="url(#aqua)" stroke-width="28" stroke-linejoin="round" filter="url(#shadow)"/>
+<path d="M373 470C373 414 416 372 470 372C491 318 544 283 606 283C692 283 761 352 761 438C814 452 852 499 852 557C852 627 797 682 727 682H410C346 682 295 631 295 567C295 514 333 476 373 470Z" fill="#EAF8FF" fill-opacity="0.98"/>
+<circle cx="523" cy="506" r="148" fill="#071525" fill-opacity="0.36" stroke="url(#aqua)" stroke-width="36"/>
+<path d="M629 612L738 721" stroke="url(#aqua)" stroke-width="39" stroke-linecap="round"/>
+<path d="M424 504H495M535 504H606M461 583H583" stroke="#EAF8FF" stroke-width="25" stroke-linecap="round" stroke-opacity="0.94"/>
+<text x="512" y="260" text-anchor="middle" font-family="Inter, Lato, Arial, sans-serif" font-size="88" font-weight="900" letter-spacing="8" fill="#BFF7FF">AAF</text>
+</svg>

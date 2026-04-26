@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="400" viewBox="0 0 1400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">AAF Cloud Scan logo</title>
+<desc id="desc">A professional logo mark for AAF Cloud Scan, combining a shield, cloud, scan ring, and repository trust motif.</desc>
+<defs>
+  <linearGradient id="markBg" x1="80" y1="55" x2="350" y2="345" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#12263F"/>
+    <stop offset="0.48" stop-color="#0B1528"/>
+    <stop offset="1" stop-color="#0E2436"/>
+  </linearGradient>
+  <linearGradient id="aqua" x1="118" y1="100" x2="312" y2="286" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#38BDF8"/>
+    <stop offset="0.52" stop-color="#22D3EE"/>
+    <stop offset="1" stop-color="#34D399"/>
+  </linearGradient>
+  <linearGradient id="gloss" x1="112" y1="74" x2="318" y2="330" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#FFFFFF" stop-opacity="0.16"/>
+    <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="softShadow" x="20" y="15" width="390" height="390" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#020617" flood-opacity="0.32"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#22D3EE" flood-opacity="0.16"/>
+  </filter>
+  <filter id="innerGlow" x="90" y="80" width="250" height="260" filterUnits="userSpaceOnUse">
+    <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#22D3EE" flood-opacity="0.3"/>
+  </filter>
+</defs>
+
+<g filter="url(#softShadow)">
+  <rect x="58" y="50" width="300" height="300" rx="72" fill="url(#markBg)" stroke="#23415D" stroke-width="2.5"/>
+  <rect x="76" y="68" width="264" height="264" rx="58" fill="url(#gloss)"/>
+  <path d="M208 91L293 123V190C293 248 254 300 208 316C162 300 123 248 123 190V123L208 91Z" fill="#071525" stroke="url(#aqua)" stroke-width="8" stroke-linejoin="round" filter="url(#innerGlow)"/>
+  <path d="M154 201C154 181 169 166 188 166C196 146 215 133 238 133C269 133 294 158 294 189C313 194 327 211 327 232C327 257 307 277 282 277H169C146 277 128 259 128 236C128 217 141 204 154 201Z" fill="#EAF8FF" fill-opacity="0.96"/>
+  <circle cx="216" cy="208" r="58" fill="#071525" fill-opacity="0.34" stroke="url(#aqua)" stroke-width="13"/>
+  <path d="M257 249L296 288" stroke="url(#aqua)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M168 207H198M216 207H246M184 233H232" stroke="#EAF8FF" stroke-opacity="0.9" stroke-width="9" stroke-linecap="round"/>
+  <path d="M132 145H109M331 145H306M132 286H109M331 286H306" stroke="#22D3EE" stroke-width="8" stroke-linecap="round" stroke-opacity="0.65"/>
+</g>
+
+<g>
+  <text x="430" y="180" font-family="Inter, Lato, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="-2.6" fill="#F7FBFF">
+    <tspan fill="#22D3EE">AAF</tspan><tspan> Cloud Scan</tspan>
+  </text>
+  <text x="435" y="236" font-family="Inter, Lato, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="1.8" fill="#9EB5CD" text-transform="uppercase">
+    Repository trust review
+  </text>
+  <path d="M436 269H1016" stroke="#22D3EE" stroke-width="4" stroke-linecap="round" stroke-opacity="0.38"/>
+  <g transform="translate(1044 250)">
+    <rect x="0" y="0" width="180" height="42" rx="21" fill="#0F2438" stroke="#244B6D"/>
+    <circle cx="25" cy="21" r="8" fill="#34D399"/>
+    <text x="44" y="28" font-family="Inter, Lato, Arial, sans-serif" font-size="18" font-weight="700" fill="#B8F7E4">Review first</text>
+  </g>
+</g>
+</svg>

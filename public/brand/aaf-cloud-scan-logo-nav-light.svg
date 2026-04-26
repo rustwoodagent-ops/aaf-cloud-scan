@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="260" viewBox="0 0 1000 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">AAF Cloud Scan compact logo</title>
+<desc id="desc">Compact professional logo lockup for AAF Cloud Scan.</desc>
+<defs>
+  <linearGradient id="markBg" x1="30" y1="30" x2="230" y2="230" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#12263F"/><stop offset="0.55" stop-color="#0B1528"/><stop offset="1" stop-color="#0E2436"/>
+  </linearGradient>
+  <linearGradient id="aqua" x1="52" y1="56" x2="222" y2="210" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#38BDF8"/><stop offset="0.52" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/>
+  </linearGradient>
+  <filter id="shadow" x="0" y="0" width="280" height="280" filterUnits="userSpaceOnUse">
+    <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#020617" flood-opacity="0.30"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#22D3EE" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<g filter="url(#shadow)">
+  <rect x="30" y="30" width="200" height="200" rx="48" fill="url(#markBg)" stroke="#244B6D" stroke-width="2"/>
+  <path d="M130 56L188 78V124C188 164 158 202 130 214C102 202 72 164 72 124V78L130 56Z" fill="#071525" stroke="url(#aqua)" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M91 135C91 121 102 110 116 110C122 96 136 87 151 87C173 87 192 105 192 127C205 131 214 143 214 158C214 176 200 190 182 190H101C85 190 72 177 72 161C72 148 81 138 91 135Z" fill="#EAF8FF" fill-opacity="0.98"/>
+  <circle cx="132" cy="139" r="39" stroke="url(#aqua)" stroke-width="10" fill="#071525" fill-opacity="0.34"/>
+  <path d="M160 167L190 197" stroke="url(#aqua)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M111 139H127M140 139H156M120 159H149" stroke="#F2FBFF" stroke-width="7" stroke-linecap="round"/>
+</g>
+<text x="278" y="122" font-family="Inter, Lato, Arial, sans-serif" font-size="56" font-weight="850" letter-spacing="-1.7" fill="#F7FBFF"><tspan fill="#22D3EE">AAF</tspan><tspan> Cloud Scan</tspan></text>
+<text x="282" y="166" font-family="Inter, Lato, Arial, sans-serif" font-size="21" font-weight="650" letter-spacing="1.5" fill="#9EB5CD">REPOSITORY TRUST REVIEW</text>
+</svg>
