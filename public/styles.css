@@ -437,6 +437,18 @@ main {
   line-height: 1.72;
 }
 
+.cli-route-note {
+  margin-top: 0;
+}
+
+.cli-route-note .codeish {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: #23476f;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
 .hero-meta-note {
   margin-top: 0.7rem;
 }
