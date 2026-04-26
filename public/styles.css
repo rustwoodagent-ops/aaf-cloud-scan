@@ -248,10 +248,10 @@ main {
 }
 
 .hero h1 {
-  font-size: clamp(2.9rem, 5.2vw, 4.35rem);
-  font-weight: 540;
-  line-height: 1.03;
-  letter-spacing: -0.052em;
+  font-size: clamp(2.35rem, 4.6vw, 3.7rem);
+  font-weight: 460;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   max-width: 13.5ch;
   margin: 0.75rem 0 1rem;
   color: var(--text-strong);
@@ -912,6 +912,7 @@ button:disabled {
 .hero-cta-row {
   display: flex;
   justify-content: center;
+  width: 100%;
   margin-top: 1.35rem;
 }
 
@@ -1087,7 +1088,8 @@ button:disabled {
 }
 
 .hero-form-panel-centered {
-  width: min(100%, 560px);
+  width: 100%;
+  max-width: none;
   margin-inline: auto;
 }
 
@@ -1250,7 +1252,7 @@ button:disabled {
   }
 
   .hero h1 {
-    font-size: 2.45rem;
+    font-size: 2.15rem;
     max-width: 13ch;
   }
 
@@ -1325,11 +1327,11 @@ button:disabled {
   }
 
   .hero h1 {
-    font-size: 1.58rem;
-    line-height: 1.1;
+    font-size: 1.38rem;
+    line-height: 1.08;
     max-width: 15ch;
     margin: 0.6rem auto 0.86rem;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.03em;
   }
 
   .hero-copy-v2 h1 {
