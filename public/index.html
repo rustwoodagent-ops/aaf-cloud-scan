@@ -264,6 +264,86 @@
           </div>
         </div>
       </section>
+
+      <section class="wrap section-block">
+        <article class="panel wide-panel article-panel">
+          <div class="section-heading section-heading-left compact-heading article-heading">
+            <p class="section-kicker">Deep explanation</p>
+            <h2>What Agent Artifact Firewall is and why repositories need this new layer of review</h2>
+            <p>Agent Artifact Firewall exists because the security surface of modern repositories has expanded beyond traditional application code.</p>
+          </div>
+
+          <div class="article-layout">
+            <div class="article-body">
+              <p>Traditional repository review was built around a simpler question: does the code itself do something dangerous? That still matters, but it is no longer enough. Modern AI-enabled workflows create a second trust boundary around the files that shape what an agent sees, trusts, and executes.</p>
+
+              <p>That includes files like <span class="codeish">SKILL.md</span>, <span class="codeish">AGENTS.md</span>, hook definitions, bootstrap scripts, MCP configurations, plugin manifests, tool instructions, and repo-level orchestration guidance. These files may not compile into the application, but they can still influence what an agent believes it is allowed to do, what tools it reaches for, what scripts it runs, and what approvals it tries to bypass.</p>
+
+              <h3>The real problem AAF is built to solve</h3>
+              <p>Repositories are increasingly becoming behavioural environments, not just code containers. An agent can be steered by setup instructions, embedded execution patterns, configuration files, and local guidance that sits around the code rather than inside it. That means a repository can appear harmless under normal application review while still containing artifacts that become dangerous once an agent workflow touches them.</p>
+
+              <p>Agent Artifact Firewall is designed to catch that class of risk earlier. It looks for agent-facing repository artifacts that can manipulate, poison, expand, or abuse AI-enabled workflows before install, merge, or adoption.</p>
+
+              <h3>What AAF Cloud Scan actually does</h3>
+              <p>AAF Cloud Scan is the public product surface built around that security model. A user pastes a public GitHub repository URL, the system validates it, queues an isolated scan job, and returns a report page with status, verdict, findings, severity context, artifact classes, and downloadable JSON and Markdown outputs.</p>
+
+              <p>The point is not security theatre. The point is to give maintainers, reviewers, and builders a faster trust signal before they allow a repository into an AI-assisted workflow.</p>
+
+              <h3>How the scan flow works</h3>
+              <p>The product is intentionally narrow and trust-first. It validates a supported public GitHub URL, creates a job record, dispatches an isolated GitHub Actions workflow, downloads the target repo archive without executing repo code, runs the scanner against the extracted contents, and returns the result through a signed callback flow. The report page then renders the final output for review.</p>
+
+              <p>This architecture matters because it avoids treating the target repository like something that should simply be executed. The repo is reviewed as content first.</p>
+
+              <h3>What kinds of risks it is looking for</h3>
+              <p>AAF is focused on agent-era repository risk: prompt-injection-like instruction language, approval-bypass phrasing, unsafe shell and hook execution patterns, suspicious setup scaffolding, tool-access expansion through config, secret access attempts, and deceptive repository artifacts that create false trust.</p>
+
+              <p>In practice, that means surfacing the files around the code that can still change operational behaviour in meaningful ways.</p>
+
+              <h3>Why this category matters now</h3>
+              <p>As more teams adopt AI coding assistants, local agents, repo-aware automation, and tool-using orchestration systems, the repository itself becomes part of the execution environment. That changes what “safe enough to trust” means. The attack surface moves outward from application logic into instruction environments.</p>
+
+              <p>That is why Agent Artifact Firewall matters. It is built around a simple but important shift: before trusting a repository in an agent workflow, review the artifacts that shape agent behaviour.</p>
+
+              <h3>What the product gives users</h3>
+              <p>AAF Cloud Scan gives users a structured review surface rather than a vague AI answer. The verdict offers a fast top-level signal. Findings explain what was surfaced and why it matters. Severity summaries and artifact classes make the output easier to reason about. JSON and Markdown exports make the product usable inside real internal review and audit workflows.</p>
+
+              <p>The goal is not to claim perfect certainty. The goal is to reduce uncertainty before trust.</p>
+
+              <h3>The trust model behind the product</h3>
+              <p>Because this is a trust-review system, the product itself has to behave carefully. That is why AAF Cloud Scan is scoped to public repositories only, uses strict GitHub URL validation, applies size and rate limits, avoids target repo code execution, and relies on signed callback integrity. Those are not secondary details. They are part of the product promise.</p>
+
+              <h3>Why Agent Artifact Firewall deserves attention</h3>
+              <p>Security tools matter when they align with where real operational risk is moving. AI-enabled workflows are changing what makes a repository safe to trust. Agent Artifact Firewall is built for that transition. It is not just another code scanner. It is a focused review layer for the repository artifacts that can shape agent behaviour before anyone notices at runtime.</p>
+
+              <p>That is the core idea behind AAF Cloud Scan: a trust-first review system for the agent era, designed to help teams inspect risky repository artifacts before they become workflow problems.</p>
+            </div>
+
+            <aside class="article-aside">
+              <div class="article-aside-card">
+                <span class="score-label">In one sentence</span>
+                <p>Agent Artifact Firewall reviews the repository artifacts around the code that can still manipulate, expand, or abuse agent workflows.</p>
+              </div>
+              <div class="article-aside-card">
+                <span class="score-label">Best fit</span>
+                <ul class="clean-list">
+                  <li>Maintainers reviewing public repos</li>
+                  <li>Teams adopting AI-assisted workflows</li>
+                  <li>Security reviewers checking agent-facing files</li>
+                </ul>
+              </div>
+              <div class="article-aside-card">
+                <span class="score-label">Core trust properties</span>
+                <ul class="clean-list">
+                  <li>No target repo code execution</li>
+                  <li>Public repos only</li>
+                  <li>Signed callback result flow</li>
+                  <li>Readable verdicts and exports</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </article>
+      </section>
     </main>
 
     <footer class="site-footer">

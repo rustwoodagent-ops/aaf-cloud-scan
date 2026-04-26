@@ -1192,6 +1192,67 @@ button:disabled {
   margin-top: 0.9rem;
 }
 
+.article-panel {
+  background:
+    radial-gradient(circle at top right, rgba(133, 236, 244, 0.1) 0, rgba(133, 236, 244, 0) 28%),
+    linear-gradient(180deg, rgba(20, 28, 43, 0.98) 0%, rgba(13, 19, 32, 0.98) 100%);
+}
+
+.article-heading {
+  max-width: 52rem;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.article-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.article-body h3 {
+  margin: 0.55rem 0 0;
+  font-size: 1.14rem;
+  line-height: 1.28;
+  letter-spacing: -0.025em;
+  color: var(--text-strong);
+}
+
+.article-body p {
+  margin: 0;
+  color: rgba(231, 238, 249, 0.8);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.article-aside {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.article-aside-card {
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(123, 149, 186, 0.16);
+  background: linear-gradient(180deg, rgba(16, 23, 37, 0.88) 0%, rgba(10, 16, 28, 0.88) 100%);
+}
+
+.article-aside-card p {
+  margin: 0.45rem 0 0;
+  color: rgba(226, 234, 247, 0.76);
+  line-height: 1.68;
+}
+
+.article-aside-card .clean-list {
+  margin-top: 0.7rem;
+}
+
 @media (max-width: 980px) {
   .hero-shell,
   .grid-3,
@@ -1203,7 +1264,8 @@ button:disabled {
   .site-header-row,
   .site-footer-row,
   .workflow-grid,
-  .safeguards-grid {
+  .safeguards-grid,
+  .article-layout {
     grid-template-columns: 1fr;
     display: grid;
   }
@@ -1226,6 +1288,10 @@ button:disabled {
   .hero-copy-v2 {
     text-align: center;
     justify-items: center;
+  }
+
+  .article-aside {
+    position: static;
   }
 
   .hero-copy-v2 .hero-subheading,
@@ -1373,7 +1439,8 @@ button:disabled {
   .proof-strip,
   .report-score-grid,
   .workflow-grid,
-  .safeguards-grid {
+  .safeguards-grid,
+  .article-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1453,7 +1520,9 @@ button:disabled {
   .hero-form-panel .hint,
   .threat-chip,
   .proof-card strong,
-  .report-score-card strong {
+  .report-score-card strong,
+  .article-body p,
+  .article-aside-card p {
     font-size: 0.92rem;
     line-height: 1.52;
   }
